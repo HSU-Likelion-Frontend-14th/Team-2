@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* header */
+.header {
+  width: 100%;
+  max-width: 1211px;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.nav-container {
+  display: flex;
+  gap: 32px;
+}
+.nav-container > div {
+  margin: 12px 24px;
+  font-size: 28px;
+  font-weight: medium;
+}
+
+/* main */
+.main {
+  width: 100%;
+  background-color: #f3f5ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 142px;
+}
+.intro {
+  width: 100%;
+  height: 800px;
+  background-color: #4a86ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+.intro > p {
+  color: white;
+  font-size: 80px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* section about */
+.section {
+  width: 100%;
+  max-width: 1211px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  color: #4a86ff;
+  font-size: 70px;
+  font-weight: 800;
+  margin-bottom: 59px;
+}
+.about-container,
+.hobby-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 200px;
+}
+.about-contents {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 40px;
+}
+.info-card {
+  grid-row: span 2;
+  width: 380px;
+  height: 498px;
+  background-color: white;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.my-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #ebedf8;
+  margin-bottom: 25px;
+  object-fit: cover;
+}
+.name {
+  color: #4a86ff;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.phone,
+.email,
+.address {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+  padding: 0 40px;
+}
+.work,
+.activities {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-bottom: 34px;
+}
+h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 23px;
+}
+.about-contents > div > p {
+  color: #626682;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.7;
+}
+
+/* section hobby */
+.hobby-contents {
+  display: flex;
+  gap: 20px;
+}
+.hobby-card {
+  width: 380px;
+}
+.card-header {
+  width: 100%;
+  height: 80px;
+  color: white;
+  background-color: #4a86ff;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  font-size: 32px;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-body {
+  width: 100%;
+  height: 297px;
+  background-color: white;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-body > img {
+  width: 300px;
+  height: 220px;
+  object-fit: cover;
+}
