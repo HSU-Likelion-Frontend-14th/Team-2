@@ -17,7 +17,6 @@ body {
 
 .navbar {
     width: 100%;
-    min-width: 1000px;
     height: 120px;
     background-color: #ffffff;
     display: flex;
