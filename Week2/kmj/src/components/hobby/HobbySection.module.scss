@@ -1,0 +1,18 @@
+.title {
+  color: #4a86ff;
+  font-size: 70px;
+  font-weight: 800;
+}
+.hobbyContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 59px;
+  margin-bottom: 200px;
+}
+.hobbyContents {
+  display: flex;
+  gap: 20px;
+}
