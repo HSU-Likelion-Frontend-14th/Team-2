@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import styles from './SignUpPage.module.scss';
 
 export const SignUpPage = () => {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ export const SignUpPage = () => {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className={styles.signupContainer}>
       <h2>👤 회원가입</h2>
       <form
         onSubmit={handleSignup}
