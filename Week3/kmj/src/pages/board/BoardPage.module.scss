@@ -1,0 +1,27 @@
+.boardContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+h3 {
+  margin-bottom: 20px;
+}
+
+.boardFormContainer,
+.boardListContainer {
+  width: 100%;
+  max-width: 800px;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.boardListContainer > ul {
+  list-style-type: none;
+  padding: 0;
+}
