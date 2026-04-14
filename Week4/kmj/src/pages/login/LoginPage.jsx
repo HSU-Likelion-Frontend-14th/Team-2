@@ -20,6 +20,7 @@ export const LoginPage = () => {
       data.username === storedUser.username &&
       data.password === storedUser.password
     ) {
+      console.log('로그인 정보:', data);
       alert('로그인 성공!');
       navigate('/');
     } else {
