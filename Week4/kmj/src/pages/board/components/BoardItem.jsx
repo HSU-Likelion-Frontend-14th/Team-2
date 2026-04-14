@@ -7,7 +7,7 @@ const BoardItem = ({ post, deletePost, updatePost }) => {
   const [isEditing, setIsEditing] = useState(false);
 
   return (
-    <li className={styles.boardItemWrapper} key={post.id}>
+    <li className={styles.boardItemWrapper}>
       {isEditing ? (
         <>
           <div className={styles.boardItemContentWrapper}>

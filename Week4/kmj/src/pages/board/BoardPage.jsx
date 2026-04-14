@@ -3,6 +3,7 @@ import BoardItem from './components/BoardItem';
 import { BoardList } from './components/BoardList';
 import { BoardForm } from './components/BoardForm';
 import styles from './BoardPage.module.scss';
+import { v4 as uuidv4 } from 'uuid';
 
 export const BoardPage = () => {
   // 💡 실습 1. 여기에 가짜 데이터 상태(useState)를 만들게 됩니다.
@@ -10,10 +11,10 @@ export const BoardPage = () => {
 
   const addPost = ({ title, content }) => {
     if (title.length == 0 || content.length == 0) {
-      console.log('제목과 내용을 입력해주세요.');
+      alert('제목과 내용을 모두 입력해주세요!');
       return;
     }
-    setPosts([...posts, { id: posts.length + 1, title, content }]);
+    setPosts([...posts, { id: uuidv4(), title, content }]);
   };
 
   const deletePost = (id) => {
