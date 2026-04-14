@@ -1,0 +1,17 @@
+.header {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+}
+
+.link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 700;
+}
+
+.active {
+  color: #007bff;
+}
