@@ -4,7 +4,7 @@
 .navbar {
     width: 100%;
     height: 120px;
-    background-color: #ffffff;
+    background-color: v.$white;
     @include m.flex-between;
     padding: 0 10%;
 
@@ -35,7 +35,7 @@
     background-color: v.$primary-color;
     @include m.flex-center;
     flex-direction: column;
-    color: white;
+    color: v.$white;
 
     h1 {
         font-size: 60px;

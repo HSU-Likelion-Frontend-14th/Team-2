@@ -25,12 +25,12 @@
 
     .hobby-label {
         padding: 15px;
-        color: white;
+        color: v.$white;
         font-weight: bold;
     }
 
     .hobby-item-img-wrapper {
-        background-color: white;
+        background-color: v.$white;
         padding: 40px;
         @include m.flex-center;
         height: 300px;
