@@ -19,18 +19,16 @@ function BoardForm({ onAddPost }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+    <form className="board-form" onSubmit={handleSubmit}>
       <input 
         type="text" placeholder="제목을 입력하세요" 
         value={title} onChange={(e) => setTitle(e.target.value)}
-        style={{ padding: '5px' }}
       />
       <input 
         type="text" placeholder="내용을 입력하세요" 
         value={content} onChange={(e) => setContent(e.target.value)}
-        style={{ padding: '5px' }}
       />
-      <button type="submit" style={{ padding: '5px', cursor: 'pointer' }}>추가</button>
+      <button type="submit">추가</button>
     </form>
   );
 }
