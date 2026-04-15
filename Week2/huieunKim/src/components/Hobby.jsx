@@ -27,9 +27,9 @@ const Hobby = () => {
         <section id="hobby" className="hobby-section">
             <h2 className="section-title">HOBBY</h2>
             <div className="hobby-grid">
-                {hobbyData.map((hobby, index) => (
+                {hobbyData.map((hobby) => (
                     <HobbyItem
-                        key={index}
+                        key={hobby.label}
                         label={hobby.label}
                         imgSrc={hobby.img}
                         altText={hobby.alt}
