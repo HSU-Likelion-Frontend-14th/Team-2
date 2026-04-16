@@ -10,8 +10,11 @@ function Login() {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
-  const isUserIdValid = userId.trim().length > 0;
-  const isPasswordValid = password.length >= 8;
+  const isUserIdValid = /^[a-zA-Z0-9]{4,20}$/.test(userId);
+  const isPasswordValid = 
+  password.length >= 8 && 
+    /[a-zA-Z]/.test(password) && 
+    /[0-9]/.test(password);
   const isAllValid = isUserIdValid && isPasswordValid;
 
   const handleSubmit = (e) => {
@@ -38,6 +41,9 @@ function Login() {
               placeholder="아이디를 입력해주세요" 
             />
           </div>
+          {userId.length > 0 && !isUserIdValid && (
+            <p className="error-msg">아이디는 영문과 숫자만 사용하여 4~20자로 입력해주세요.</p>
+          )}
         </div>
 
         <div className="input-group">
@@ -58,7 +64,7 @@ function Login() {
             </button>
           </div>
           {password.length > 0 && !isPasswordValid && (
-            <p className="error-msg">비밀번호는 8자 이상입니다.</p>
+            <p className="error-msg">비밀번호는 영문과 숫자를 모두 포함하여 8자 이상이어야 합니다.</p>
           )}
         </div>
 
