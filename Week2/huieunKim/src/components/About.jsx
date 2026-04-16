@@ -34,8 +34,8 @@ const About = () => {
                 </div>
 
                 <div className="info-grid">
-                    {infoData.map((info, index) => (
-                        <div className="info-item" key={index}>
+                    {infoData.map((info) => (
+                        <div className="info-item" key={info.title}>
                             <h4>{info.title}</h4>
                             <p>{info.desc1}</p>
                             {info.desc2 && <p>{info.desc2}</p>}

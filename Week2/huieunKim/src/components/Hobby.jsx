@@ -1,20 +1,10 @@
 import React from 'react';
 import './Hobby.scss';
+import HobbyItem from './HobbyItem';
 import bookImg from '../assets/book.jpg';
 import imagineImg from '../assets/imagine.jpg';
 import teaImg from '../assets/blacktea.jpg';
 
-
-const HobbyItem = ({ label, imgSrc, altText }) => {
-    return (
-        <div className="hobby-item">
-            <div className="hobby-label">{label}</div>
-            <div className="hobby-item-img-wrapper">
-                <img src={imgSrc} alt={altText} />
-            </div>
-        </div>
-    );
-};
 
 const Hobby = () => {
     const hobbyData = [
@@ -27,9 +17,9 @@ const Hobby = () => {
         <section id="hobby" className="hobby-section">
             <h2 className="section-title">HOBBY</h2>
             <div className="hobby-grid">
-                {hobbyData.map((hobby, index) => (
+                {hobbyData.map((hobby) => (
                     <HobbyItem
-                        key={index}
+                        key={hobby.label}
                         label={hobby.label}
                         imgSrc={hobby.img}
                         altText={hobby.alt}

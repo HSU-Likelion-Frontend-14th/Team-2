@@ -1,0 +1,19 @@
+@use 'variables' as v;
+
+.header {
+  padding: 20px;
+  display: flex;
+  gap: 15px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid v.$border-gray;
+
+  a {
+    text-decoration: none;
+    color: v.$text-dark;
+    font-weight: bold;
+    
+    &:hover {
+      color: v.$main-orange; 
+    }
+  }
+}

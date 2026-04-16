@@ -1,0 +1,98 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.auth-container {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  form {
+    @include m.flex-column(20px);
+    width: 300px;
+
+    .input-group {
+      @include m.flex-column(5px);
+
+      label {
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      .input-wrapper {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        input {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid v.$border-gray;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+
+        /* 눈 버튼 */
+        .toggle-btn {
+          position: absolute;
+          right: 10px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          font-size: 12px;
+          color: #666;
+          padding: 0;
+        }
+      }
+
+      /* 에러 메시지 */
+      .error-msg {
+        color: v.$error-red;
+        font-size: 12px;
+        margin: 0;
+      }
+    }
+
+    .submit-btn {
+      padding: 12px;
+      background-color: v.$main-orange;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+
+      &:hover {
+        background-color: v.$hover-orange;
+      }
+      
+      /* 유효성 검사 통과 못했을 때 */
+      &:disabled {
+        background-color: v.$border-gray;
+        cursor: not-allowed;
+      }
+    }
+    .auth-nav-text {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+
+      a {
+        color: v.$main-orange; 
+        text-decoration: none;
+        font-weight: bold;
+        margin-left: 5px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

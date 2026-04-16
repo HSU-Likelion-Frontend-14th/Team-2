@@ -1,4 +1,4 @@
-@import '../styles/variables';
+@use '../styles/variables' as v;
 
 .about-section {
     width: 100%;
@@ -16,7 +16,7 @@
 }
 
 .profile-card {
-    background-color: white;
+    background-color: v.$white;
     padding: 40px;
     border-radius: 16px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -27,7 +27,7 @@
         text-align: center;
         font-size: 28px;
         margin-bottom: 5px;
-        color: $primary-color;
+        color: v.$primary-color;
     }
 }
 
@@ -45,7 +45,7 @@
 
     span {
         font-size: 18px;
-        color: #333;
+        color: v.$text-secondary;
     }
 }
 
@@ -64,8 +64,15 @@
     gap: 30px;
 }
 
-.info-item h4 {
+.info-item {
+    h4 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
+    }
+
+    p {
+    color: v.$text-description;
+    }
+
 }

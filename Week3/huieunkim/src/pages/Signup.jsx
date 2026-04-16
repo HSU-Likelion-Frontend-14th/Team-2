@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import '../styles/Signup.scss';
 
 function Signup() {
   const navigate = useNavigate();
@@ -10,9 +11,9 @@ function Signup() {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className="signup-container">
       <h2>👤 회원가입</h2>
-      <form onSubmit={handleSignup} style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '200px' }}>
+      <form onSubmit={handleSignup}>
         <input type="text" placeholder="아이디" required />
         <input type="password" placeholder="비밀번호" required />
         <button type="submit">가입하기</button>
