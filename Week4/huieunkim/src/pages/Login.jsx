@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import '../styles/Auth.scss';
 
@@ -71,6 +71,11 @@ function Login() {
         <button type="submit" className="submit-btn" disabled={!isAllValid}>
           로그인
         </button>
+
+        {/* 회원가입 이동 링크 */}
+        <p className="auth-nav-text">
+          아직 계정이 없으신가요? <Link to="/signup">회원가입</Link>
+        </p>
       </form>
     </div>
   );
