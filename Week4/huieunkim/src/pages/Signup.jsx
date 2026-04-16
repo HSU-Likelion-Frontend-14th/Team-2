@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import '../styles/Auth.scss';
 
 function Signup() {
@@ -70,7 +71,7 @@ function Signup() {
               className="toggle-btn"
               onClick={() => setShowPassword(!showPassword)}
             >
-              {showPassword ? "숨기기" : "보이기"}
+              {showPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
             </button>
           </div>
           {password.length > 0 && !isPasswordValid && (
