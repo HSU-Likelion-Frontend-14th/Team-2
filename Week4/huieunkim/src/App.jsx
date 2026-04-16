@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Board from './pages/Board';
 import Signup from './pages/Signup';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/board" element={<Board />} />
+        <Route path="/Login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
     </BrowserRouter>
