@@ -12,8 +12,6 @@ export default function App() {
   const [markers, setMarkers] = useState([]);
   const [activeMarkerId, setActiveMarkerId] = useState(null);
 
-  const [markerSequence, setMarkerSequence] = useState(1);
-
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -35,11 +33,9 @@ export default function App() {
         lat: mouseEvent.latLng.getLat(),
         lng: mouseEvent.latLng.getLng(),
       },
-      content: `${markerSequence}번째 마커입니다`,
     };
 
     setMarkers((prevMarkers) => [...prevMarkers, newMarker]);
-    setMarkerSequence((prev) => prev + 1);
   };
 
   const handleDeleteMarker = (e, targetId) => {
@@ -58,15 +54,12 @@ export default function App() {
         level={3}
         onClick={handleMapClick}
       >
-        {markers.map((marker) => (
+        {markers.map((marker, index) => (
           <div key={marker.id}>
             <MapMarker
               position={marker.position}
               onClick={() => setActiveMarkerId(marker.id)}
-              image={{
-                src: MakerIcon,
-                size: { width: 35, height: 35 },
-              }}
+              image={{ src: MakerIcon, size: { width: 35, height: 35 } }}
             />
 
             {activeMarkerId === marker.id && (
@@ -76,7 +69,9 @@ export default function App() {
                 clickable={true}
               >
                 <div className="overlay-wrapper">
-                  <span>{marker.content}</span>
+                  <span style={{ letterSpacing: "-0.5px" }}>
+                    {index + 1}번째 마커입니다
+                  </span>
 
                   <button
                     className="delete-btn"
@@ -84,7 +79,6 @@ export default function App() {
                   >
                     삭제
                   </button>
-
                   <button
                     className="close-btn"
                     onClick={(e) => {
