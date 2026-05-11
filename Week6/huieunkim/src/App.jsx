@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import { Map, MapMarker, CustomOverlayMap } from "react-kakao-maps-sdk";
-import MakerIcon from "./assets/markerIcon.svg";
+import MarkerIcon from "./assets/markerIcon.svg";
 
 export default function App() {
   const [center, setCenter] = useState({
@@ -59,7 +59,7 @@ export default function App() {
             <MapMarker
               position={marker.position}
               onClick={() => setActiveMarkerId(marker.id)}
-              image={{ src: MakerIcon, size: { width: 35, height: 35 } }}
+              image={{ src: MarkerIcon, size: { width: 35, height: 35 } }}
             />
 
             {activeMarkerId === marker.id && (
