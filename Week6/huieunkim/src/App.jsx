@@ -73,9 +73,7 @@ export default function App() {
                 clickable={true}
               >
                 <div className="overlay-wrapper">
-                  <span style={{ letterSpacing: "-0.5px" }}>
-                    {index + 1}번째 마커입니다
-                  </span>
+                  <span>{index + 1}번째 마커입니다</span>
 
                   <button
                     className="delete-btn"
