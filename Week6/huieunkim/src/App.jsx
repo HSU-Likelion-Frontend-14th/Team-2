@@ -58,7 +58,11 @@ export default function App() {
           <div key={marker.id}>
             <MapMarker
               position={marker.position}
-              onClick={() => setActiveMarkerId(marker.id)}
+              onClick={() =>
+                setActiveMarkerId((prevId) =>
+                  prevId === marker.id ? null : marker.id,
+                )
+              }
               image={{ src: MarkerIcon, size: { width: 35, height: 35 } }}
             />
 
