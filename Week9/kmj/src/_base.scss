@@ -1,0 +1,32 @@
+@use './variables' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: $color-bg;
+  color: $color-text;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid $color-border;
+  background: white;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 14px;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+
+.empty {
+  color: $color-text-muted;
+  padding: 24px 0;
+  text-align: center;
+}
