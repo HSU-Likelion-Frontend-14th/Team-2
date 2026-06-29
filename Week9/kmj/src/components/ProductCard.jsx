@@ -9,7 +9,12 @@ const ProductCard = React.memo(function ProductCard({ product, onAddToCart }) {
       <span className="product-card__category">{product.category}</span>
       <h3>{product.name}</h3>
       <p className="product-card__price">{product.price.toLocaleString()}원</p>
-      <button onClick={() => onAddToCart(product.id)}>담기</button>
+      <button
+        disabled={product.stock === 0}
+        onClick={() => onAddToCart(product.id)}
+      >
+        {product.stock === 0 ? '품절' : '담기'}
+      </button>
     </div>
   );
 });
