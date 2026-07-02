@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import CategoryFilter from "./components/CategoryFilter";
 import ProductList from "./components/ProductList";
 import CartPanel from "./components/CartPanel";
+import "./App.scss";
 
 function App() {
   // useState 대신 zustand store에서 꺼내기
