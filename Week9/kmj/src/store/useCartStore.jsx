@@ -1,13 +1,27 @@
 import { create } from 'zustand';
+import products from '../data/products';
+
+const getProductById = (productId) =>
+  products.find((product) => product.id === productId);
 
 export const useCartStore = create((set) => ({
   cart: [],
 
   addToCart: (productId) => {
+    const product = getProductById(productId);
+
+    if (!product || product.stock <= 0) {
+      return false;
+    }
+
     set((state) => {
       const existing = state.cart.find((item) => item.id === productId);
 
       if (existing) {
+        if (existing.quantity >= product.stock) {
+          return state;
+        }
+
         return {
           cart: state.cart.map((item) =>
             item.id === productId
@@ -16,19 +30,37 @@ export const useCartStore = create((set) => ({
           ),
         };
       }
-      console.log(state.cart);
+
       return {
         cart: [...state.cart, { id: productId, quantity: 1 }],
       };
     });
+
+    return true;
   },
 
   increase: (productId) => {
-    set((state) => ({
-      cart: state.cart.map((item) =>
-        item.id === productId ? { ...item, quantity: item.quantity + 1 } : item,
-      ),
-    }));
+    const product = getProductById(productId);
+
+    if (!product) {
+      return false;
+    }
+
+    set((state) => {
+      const existing = state.cart.find((item) => item.id === productId);
+
+      if (!existing || existing.quantity >= product.stock) {
+        return state;
+      }
+
+      return {
+        cart: state.cart.map((item) =>
+          item.id === productId ? { ...item, quantity: item.quantity + 1 } : item,
+        ),
+      };
+    });
+
+    return true;
   },
 
   decrease: (productId) => {
