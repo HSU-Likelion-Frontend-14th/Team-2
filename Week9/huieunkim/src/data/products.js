@@ -1,0 +1,13 @@
+const products = [
+  { id: 1, name: '무선 마우스', price: 25000, category: '전자기기', emoji: '🖱️', stock: 12 },
+  { id: 2, name: '블루투스 키보드', price: 45000, category: '전자기기', emoji: '⌨️', stock: 0 },
+  { id: 3, name: '노트북 거치대', price: 18000, category: '전자기기', emoji: '💻', stock: 5 },
+  { id: 4, name: '타입스크립트', price: 28000, category: '도서', emoji: '📘', stock: 8 },
+  { id: 5, name: '리액트', price: 32000, category: '도서', emoji: '📗', stock: 3 },
+  { id: 6, name: '자바스크립트', price: 26000, category: '도서', emoji: '📙', stock: 0 },
+  { id: 7, name: '필기 노트', price: 4500, category: '문구류', emoji: '📓', stock: 20 },
+  { id: 8, name: '볼펜 세트', price: 12000, category: '문구류', emoji: '🖊️', stock: 15 },
+  { id: 9, name: '형광펜 세트', price: 8000, category: '문구류', emoji: '🖍️', stock: 0 },
+]
+
+export default products;
