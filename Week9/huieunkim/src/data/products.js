@@ -10,4 +10,5 @@ const products = [
   { id: 9, name: '형광펜 세트', price: 8000, category: '문구류', emoji: '🖍️', stock: 0 },
 ]
 
-export default products;
+export const fetchProducts = () =>
+  new Promise((resolve) => setTimeout(() => resolve(products), 300));
