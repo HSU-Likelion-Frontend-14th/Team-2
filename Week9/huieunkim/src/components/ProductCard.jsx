@@ -10,7 +10,7 @@ function ProductCard({ product, onAddToCart }) {
       <h3>{product.name}</h3>
       <p className="product-card__price">{product.price.toLocaleString()}원</p>
       <button
-        onClick={() => onAddToCart(product.id)}
+        onClick={() => onAddToCart(product)}
         disabled={product.stock === 0} // 재고 없으면 비활성화
       >
         {product.stock === 0 ? "품절" : "담기"}

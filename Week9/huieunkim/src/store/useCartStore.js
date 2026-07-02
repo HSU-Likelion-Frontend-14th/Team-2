@@ -9,28 +9,34 @@ const useCartStore = create((set) => ({
   setCategory: (category) => set({ selectedCategory: category }),
 
   // 장바구니에 상품 추가
-  addToCart: (productId) =>
+  addToCart: (product) => // productId 대신 product 전체를 받음
     set((state) => {
-      const existing = state.cart.find((item) => item.id === productId);
+      const existing = state.cart.find((item) => item.id === product.id);
       if (existing) {
+        // 이미 담긴 수량이 stock 이상이면 추가 안 함
+        if (existing.quantity >= product.stock) return state;
         return {
           cart: state.cart.map((item) =>
-            item.id === productId
+            item.id === product.id
               ? { ...item, quantity: item.quantity + 1 }
               : item
           ),
         };
       }
-      return { cart: [...state.cart, { id: productId, quantity: 1 }] };
+      return { cart: [...state.cart, { id: product.id, quantity: 1 }] };
     }),
 
   // 수량 증가
-  increase: (productId) =>
-    set((state) => ({
-      cart: state.cart.map((item) =>
-        item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
-      ),
-    })),
+  increase: (product) =>    // productId 대신 product 전체를 받음
+    set((state) => {
+      const existing = state.cart.find((item) => item.id === product.id);
+      if (existing && existing.quantity >= product.stock) return state;
+      return {
+        cart: state.cart.map((item) =>
+          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+        ),
+      };
+    }),
 
   // 수량 감소 (0 되면 제거)
   decrease: (productId) =>

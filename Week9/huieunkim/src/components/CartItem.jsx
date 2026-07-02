@@ -9,7 +9,7 @@ function CartItem({ item, onIncrease, onDecrease, onRemove }) {
       <div className="cart-item__qty">
         <button onClick={() => onDecrease(item.id)}>-</button>
         <span>{item.quantity}</span>
-        <button onClick={() => onIncrease(item.id)}>+</button>
+        <button onClick={() => onIncrease(item)}>+</button>
       </div>
       <button className="cart-item__remove" onClick={() => onRemove(item.id)}>
         ✕

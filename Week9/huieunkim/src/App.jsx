@@ -28,7 +28,7 @@ function App() {
   // useCallback: addToCart를 props로 ProductCard에 넘길 때
   // 이게 없으면 App이 리렌더될 때마다 함수가 새로 생성되어 React.memo로 감싼 ProductCard가 리렌더됨 → memo 무력화;;
   const handleAddToCart = useCallback(
-    (productId) => addToCart(productId),
+    (product) => addToCart(product),
     [addToCart],
   );
 
